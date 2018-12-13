@@ -22,6 +22,15 @@
   color: #61dafb;
 }
 
+.taskItem {
+  color : blue;
+}
+
+.strikeTaskItem {
+  color: red;
+  text-decoration: line-through;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
