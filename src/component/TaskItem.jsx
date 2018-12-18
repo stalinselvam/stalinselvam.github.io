@@ -1,19 +1,21 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class TaskItem extends Component {
+const TaskItem = props => {
+    return (
+        <React.Fragment>
+            <li className="list-group-item list-group-item-primary">
+                <label>{props.item}</label>
+                <button type="button"
+                    onClick={() => props.onDelete(props.item)}
+                    className="close"><span aria-hidden="true">&times;</span></button>
+            </li>
+        </React.Fragment>
+    );
+}
 
-    render() {
-        return (
-            <React.Fragment>
-                <li className="list-group-item list-group-item-primary">
-                    <label>{this.props.item}</label>
-                    <button type="button"
-                        onClick={() => this.props.onDelete(this.props.item)}
-                        className="close"><span aria-hidden="true">&times;</span></button>
-                </li>
-            </React.Fragment>
-        );
-    }
+TaskItem.propTypes = {
+    item : PropTypes.string.isRequired
 }
 
 export default TaskItem;
